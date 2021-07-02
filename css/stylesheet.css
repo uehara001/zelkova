@@ -1,0 +1,230 @@
+/* 共通--------------------- */
+html{
+  font-size: 100%;
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,table
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, legend,
+ caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  font-weight: normal;  
+}
+
+body {
+  background-color:#000000;
+  height:fit-content;
+}
+
+/* ヘッダー */
+header{
+  background-color:  #FFEE32;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#hc {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 45px;
+  width: 120px;
+  background-color: beige;
+} 
+
+/* メイン */
+
+time{
+  color: aliceblue;
+}
+#raceinfo {
+  display: flex;
+  color: aliceblue;
+  align-items:baseline;
+}
+
+h1 {
+  font-size: x-large;
+  margin-right: 10px;
+}
+
+.content{
+  border: #777977 solid 1px;
+  width: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+.content{
+  margin-bottom: 20px;
+}
+.columns {
+  background-color: #777977;
+  color: #abacad;
+}
+
+/* ツール */
+.tc{
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+#ranking{
+    width: 50%;
+}
+#indextable{
+    width: 50%;
+}
+#ranking table {
+  margin: 0 auto;
+  text-align: center;
+  width: 99%;
+}
+#result input {
+  width: 2em;
+}
+
+#numselect span {
+  margin-left: 0.5em;
+}
+.range {
+  margin-left: 0.5em;
+}
+.range p {
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer; 
+  outline: none;
+  height: 5px; 
+  width: 80%; 
+  background: #777977;
+  border-radius: 10px; 
+  border: solid 3px #dff1ff;
+  margin-bottom: 2.5em; 
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  background: #abacad; 
+  width: 18px; 
+  height: 18px; 
+  border-radius: 50%;
+  border: #dddddd 1px solid;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2); 
+}
+
+#tool_button {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content:space-between;
+  margin-top: 42px;
+}
+
+/* 出走表 */
+#cardtable {
+  background-color: aliceblue;
+}
+#cardtable table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  table-layout: fixed;
+}
+#cardtable table tr {
+  background-color: #fff;
+  padding: .35em;
+  border: 2px solid #eee;
+}
+#cardtable table th{
+  padding: 2em;
+  border-right: 2px solid #fff;
+}
+#cardtable table td {
+  padding: 2em .5em;
+  border-right: 2px solid #eee;
+  text-align: center;
+}
+
+/* フッター */
+footer {
+  background-color:  #242323;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+/* max770 --------------------------------------*/
+@media (max-width:770px){
+  .wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+
+  #ranking{
+    height: 400px;
+  }
+  #numselect{
+    height: 300px;
+  }
+  #card{
+    height: 400px;
+  }
+}
+
+/* 771-1030---------------------------------------- */
+@media (min-width:771px) and (max-width:1030px){
+  #tool {
+    display: flex;
+  }
+  .wrapper {
+    width: 800px;
+  }
+ 
+  .content {
+    height: 700px;
+  }  
+}
+
+/* 1031--------------------------------------------------- */
+@media (min-width:1031px){
+  #tool {
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrapper {
+    width: 900px;
+  }
+  #ranking{
+    width: 50%;
+  }
+  .content {
+    height: 700px;
+  }  
+}
+
+
+
