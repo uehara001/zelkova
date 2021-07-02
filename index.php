@@ -39,7 +39,7 @@ try {
     <p class="distance">距離:</p>
     <p class="condition">馬場状態:</p>
   </div>
-  <!-- 予想ツール -->
+  <!-- メイン -->
   <section id="tool">
     <div class="content tc" id="ranking">
       <table id="rankingTable"></table>
@@ -93,7 +93,7 @@ try {
     <form action="index.php" method="post">
       <div class="range"><p>馬番</p>
       <input name="r1" type="range" min="0" max="10" step="0.1" value="5" >
-      <span id="value1">5</span>
+      <span class="ratio">5</span>
       </div>
       <div class="range"><p>種牡馬</p>
         <input name="r2" type="range" min="0" max="10" step="0.1" value="5" >
@@ -114,7 +114,7 @@ try {
 
       <div id="tool_button">
         <input id="calc-button" type="button" onclick="calc(r1.value, r2.value, r3.value, r1.value, r5.value);" value="決定">
-        <input id="reset" type="reset" value="リセット">
+        <input id="reset" type="reset" value="リセット" onclick="resetFunction()">
       </div>
     </form>
   </section>

@@ -4,34 +4,30 @@ let elem = document.getElementsByClassName('range');
 let rangeValue = function (elem, target) {
   return function (evt) {
     target.innerHTML = elem.value;
-  }
+  };
 };
 for (let i = 0, max = elem.length; i < max; i++) {
   let bar = elem[i].getElementsByTagName('input')[0];
   let target = elem[i].getElementsByTagName('span')[0];
   bar.addEventListener('input', rangeValue(bar, target));
-}
+};
 
 // リセットボタン
-// function resetSpan() {
-//   alert("Click")
-// } 
-// let resetButton = document.getElementById('reset');
-// let target = document.getElementById('value1');
-// resetButton.addEventListener('click',resetSpan());
-
-let resetButton = document.getElementById('reset');
-let target = document.getElementById('value1');
-let resetFunction = function (target) {
-  target.innerHTML = '5';
+function resetFunction() {
+  let ratioElements = document.getElementsByClassName('ratio');
+  ratioElements = Array.from(ratioElements);
+  ratioElements.forEach(element => {
+    element.innerHTML = '5';
+  });
 }
-resetButton.addEventListener('click', resetFunction(target))
-let trElements = document.getElementById('allIndex').getElementsByTagName('tr');
-let resultArray = [];
 
+
+// calc関数定義
+let trElements = document.getElementById('allIndex').getElementsByTagName('tr');
+let rankingTable = document.getElementById('rankingTable');
 function calc(r1, r2, r3, r4, r5) {
+  let resultArray = [];
   const makeRunking = new Promise(function (resolve) {
-    let rankingTable = document.getElementById('rankingTable');
     while (rankingTable.firstChild) {
       rankingTable.removeChild(rankingTable.firstChild);
     }
@@ -69,6 +65,5 @@ function calc(r1, r2, r3, r4, r5) {
       document.getElementById('rankingTable').innerHTML
         += '<tr><td>' + resultCol.index + '</td><td>' + resultCol.name + '</td></tr>';
     };
-
   });
-};
+}
