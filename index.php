@@ -1,21 +1,3 @@
-<?php
-$dsn = 'mysql:host=localhost;dbname=keiba;charaset=utf8';
-$user = 'keiba_user';
-$pass = 'sxug92s';
-try {
-  $dbh = new PDO($dsn,$user,$pass,[
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-  ]);
-  // echo '接続成功';
-  $sql = 'SELECT * FROM ooi062912';
-  $stmt = $dbh->query($sql);
-  $result = $stmt -> fetchall(PDO::FETCH_ASSOC);
-  $dbh = null;
-} catch(PDOException $e) {
-  echo '接続失敗',  $e->getMessage();
-  exit();
-};
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -46,45 +28,21 @@ try {
     </div>
     
     <div class="content tc" id="indextable">
-      <table id="allIndex">
-      <tr>
-        <td>  </td>
-        <td>競走馬</td>
-        <td>馬番</td>
-        <td>種牡馬</td>
-        <td>騎手</td>
-        <td>調教師</td>
-        <td>スピード</td>
-      </tr>
-        <?php
-          foreach($result as $column){
-          echo "\t<tr>\n";
-          echo "\t\t<td>" ;
-          echo $column['num'];
-          echo "</td>\n";
-          echo "\t\t<td>" ;
-          echo $column['name'];
-          echo "</td>\n";
-          echo "\t\t<td>" ;
-          echo $column['position'];
-          echo "</td>\n";
-          echo "\t\t<td>" ;
-          echo $column['stallion'];
-          echo "</td>\n";
-          echo "\t\t<td>" ;
-          echo $column['jockey'];
-          echo "</td>\n";
-          echo "\t\t<td>" ;
-          echo $column['trainer'];
-          echo "</td>\n";
-          echo "\t\t<td>" ;
-          echo $column['speed'];
-          echo "</td>\n";
-          echo "\t</tr>\n";
-          echo "\n";
-          }
-        ?>
-      </table>
+      <?php
+      $index_file = "allIndex.csv";
+      if (( $handle = fopen  ( $index_file, "r" )) !== FALSE) {
+        echo "<table id='allIndex'>\n";
+        while (($data = fgetcsv ($handle, 1000, ",", '"')) !== FALSE) {
+        echo "\t<tr>\n";
+        for ($i = 0; $i < count($data); $i++) {
+          echo "\t\t<td>{$data[$i]}</td>\n";
+        }
+        echo "\t</tr>\n";
+        }
+        echo "</table>\n";
+        fclose ($handle);
+      }
+      ?>
     </div>
   </section>
 
@@ -121,8 +79,8 @@ try {
   <!-- 出走表 -->
   <section id="cardtable">
     <?php
-    $file = "出走表.csv";
-    if (( $handle = fopen  ( $file, "r" )) !== FALSE) {
+    $raceCard_file = "raceCard.csv";
+    if (( $handle = fopen  ( $raceCard_file, "r" )) !== FALSE) {
       echo "<table>\n";
       while (($data = fgetcsv ($handle, 1000, ",", '"')) !== FALSE) {
         echo "\t<tr>\n";
