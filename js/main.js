@@ -24,7 +24,7 @@ function resetFunction() {
 
 // calc関数定義
 let trElements = document.getElementById('allIndex').getElementsByTagName('tr');
-let rankingTable = document.getElementById('rankingTable');
+let rankingTable = document.getElementById('rankingtbody');
 function calc(r1, r2, r3, r4, r5) {
   let resultArray = [];
   const makeRunking = new Promise(function (resolve) {
@@ -62,7 +62,7 @@ function calc(r1, r2, r3, r4, r5) {
   makeRunking.then(function () {
     for (let i = 0; i < resultArray.length; i++) {
       let resultCol = resultArray[i];
-      document.getElementById('rankingTable').innerHTML
+      document.getElementById('rankingtbody').innerHTML
         += '<tr><td>' + resultCol.index + '</td><td>' + resultCol.name + '</td></tr>';
     };
   });

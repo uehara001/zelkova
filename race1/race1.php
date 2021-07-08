@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/stylesheet.css">
-  <title>Keiba</title>
+  <title>Zelkova-指数作成コンテンツ</title>
  
 </head>
 <body>
@@ -26,11 +26,22 @@
   </div>
   <section id="tool">
     <!-- ランキング -->
-    <div class="content tc" id="ranking">
-      <table id="rankingTable"></table>
+    <div class="content" id="ranking">
+      <table>
+        <thead >
+          <tr>
+            <th class="tablehead">指数</th>
+            <th class="tablehead">競走馬</th>
+          </tr>
+        </thead>
+        <tbody id="rankingtbody">
+          <tr id="rankingdefo"><td colspan="2">ここに計算結果が出力されます。</td></tr>
+        </tbody>
+      </table>
+      
     </div>
     <!-- 指数表 -->
-    <div class="content tc" id="indextable">
+    <div class="content" id="indextable">
       <?php
       $index_file = "allIndex.csv";
       if (( $handle = fopen  ( $index_file, "r" )) !== FALSE) {
@@ -49,7 +60,7 @@
     </div>
   </section>
     <!-- スライダー -->
-    <section class="content tc" id="numselect">
+    <section class="content" id="numselect">
       <form action="index.php" method="post">
         <div class="range"><p>馬番</p>
         <input name="r1" type="range" min="0" max="10" step="0.1" value="5" >
