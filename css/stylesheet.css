@@ -17,8 +17,8 @@ time, dl, dt, dd {
   border-spacing: 0;
 }
 body {
-  background-color:#EEEEEE;
   color: #2c2c2c;
+  background-color: #EEEEEE;
 }
 
 h1 {
@@ -46,7 +46,7 @@ table {
 
 /* ヘッダー */
 header{
-  background-color:  #017635;
+  background: linear-gradient(#017635, rgb(222, 40, 238));
   width: 100%;
   height: 10vh;
   margin-bottom: 20px;
@@ -161,6 +161,7 @@ header{
 } 
 #rankingtbody tr:first-child td:first-child{
  background-color: #FFEF84;
+ color: red;
 } 
 #rankingtbody tr:first-child td:nth-child(2){
  background-color: #FFFBE5;
@@ -241,42 +242,57 @@ header{
 #numselect span {
   margin-left: 0.5em;
 }
+#slider {
+  display: flex;
+  flex-wrap: wrap;;
+  justify-content: space-between;
+  margin: 30px auto;
+  width: 85%;
+
+}
 .range {
-  margin-left: 0.5em;
+  background:;
+  width: 48%;
+  margin-bottom: 20px;
 }
 .range p {
   margin-left: 1em;
-  margin-bottom: 0.5em;
+  display: inline-block;
+  font-weight: bold;
+}
+.range .ratio {
+  display: inline-block;
+  background-color: #EEEEEE;
+  width: 2rem;
+  text-align: center;
 }
 input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
   cursor: pointer; 
-  outline: none;
-  height: 5px; 
-  width: 40%; 
-  background: #777977;
-  border-radius: 10px; 
-  border: solid 3px #dff1ff;
-  margin-bottom: 2.5em; 
+  width: 90%;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; 
-  background: #abacad; 
-  width: 18px; 
-  height: 18px; 
-  border-radius: 50%;
-  border: #dddddd 1px solid;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2); 
-}
 
-#tool_button {
-  margin: 0 auto;
-  width: 50%;
+#tool-button {
   display: flex;
   justify-content:space-between;
-  margin-top: 42px;
+  align-items: center;
+  padding: 10px 35%;
+}
+#tool-button input {
+  display: block;
+  border-radius: 5px;
+  width: 100px;  
+  height: 60px;
+}
+#tool-button #calc-button {
+  background-color: #595959;
+  color: #ffffff;
+  font-size: large;
+  font-weight: bold;
+  border-bottom: 5px solid #292929;
+}
+#tool-button #reset {
+  background-color: #ffffff;
 }
 
 /* 出走表 */

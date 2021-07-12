@@ -61,31 +61,38 @@
   </section>
     <!-- スライダー -->
     <section class="content" id="numselect">
-      <form action="index.php" method="post">
-        <div class="range"><p>馬番</p>
-        <input name="r1" type="range" min="0" max="10" step="0.1" value="5" >
-        <span class="ratio">5</span>
-        </div>
-        <div class="range"><p>種牡馬</p>
-          <input name="r2" type="range" min="0" max="10" step="0.1" value="5" >
-          <span class="ratio">5</span>
-        </div>
-        <div class="range"><p>騎手</p>
-          <input name="r3" type="range" min="0" max="10" step="0.1" value="5" >
-          <span class="ratio">5</span>
-        </div>
-        <div class="range"><p>調教師</p>
-          <input name="r4" type="range" min="0" max="10" step="0.1" value="5" >
-          <span class="ratio">5</span>
-        </div>
-        <div class="range"><p>スピード</p>
-          <input name="r5" type="range" min="0" max="10" step="0.1" value="5" >
-          <span class="ratio">5</span>
+      <form>
+        <div id="slider">
+          <div class="range">
+            <p>馬番</p>
+            <span class="ratio">5</span>
+            <input name="r1" type="range" min="0" max="10" step="0.1" value="5" >
+          </div>
+          <div class="range">
+            <p>種牡馬</p>
+            <span class="ratio">5</span>
+            <input name="r2" type="range" min="0" max="10" step="0.1" value="5" >
+          </div>
+          <div class="range">
+            <p>騎手</p>
+            <span class="ratio">5</span>
+            <input name="r3" type="range" min="0" max="10" step="0.1" value="5" >
+          </div>
+          <div class="range">
+            <p>調教師</p>
+            <span class="ratio">5</span>
+            <input name="r4" type="range" min="0" max="10" step="0.1" value="5" >
+          </div>
+          <div class="range">
+            <p>スピード</p>
+            <span class="ratio">5</span>
+            <input name="r5" type="range" min="0" max="10" step="0.1" value="5" >
+          </div>
         </div>
 
-        <div id="tool_button">
-          <input id="calc-button" type="button" onclick="calc(r1.value, r2.value, r3.value, r1.value, r5.value);" value="決定">
-          <input id="reset" type="reset" value="リセット" onclick="resetFunction()">
+        <div id="tool-button">
+          <input id="reset" type="reset" value="Reset" onclick="resetFunction()">
+          <input id="calc-button" type="button" onclick="calc(r1.value, r2.value, r3.value, r1.value, r5.value);" value="Enter">
         </div>
       </form>
     </section>
