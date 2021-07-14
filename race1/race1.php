@@ -10,7 +10,7 @@
 </head>
 <body>
 <!-- ヘッダー -->
-  <header>
+  <header class="maincolor">
     <div class="wrapper" id="hc">
     <a href="../index.html"><img class="logo"></a>
     </div>
@@ -30,8 +30,8 @@
       <table>
         <thead >
           <tr>
-            <th class="tablehead">指数</th>
-            <th class="tablehead">競走馬</th>
+            <th class="tablehead maincolor">指数</th>
+            <th class="tablehead maincolor">競走馬</th>
           </tr>
         </thead>
         <tbody id="rankingtbody">
@@ -47,7 +47,7 @@
       if (( $handle = fopen  ( $index_file, "r" )) !== FALSE) {
         echo "<table id='allIndex'>\n";
         while (($data = fgetcsv ($handle, 1000, ",", '"')) !== FALSE) {
-        echo "\t<tr>\n";
+        echo "\t<tr class='maincolor'>\n";
         for ($i = 0; $i < count($data); $i++) {
           echo "\t\t<td>{$data[$i]}</td>\n";
         }
@@ -66,34 +66,35 @@
           <div class="range">
             <p>馬番</p>
             <span class="ratio">5</span>
-            <input name="r1" type="range" min="0" max="10" step="0.1" value="5" >
+            <input name="r1" type="range" min="0" max="10" step="1" value="5" list="nummarks">
+
           </div>
           <div class="range">
             <p>種牡馬</p>
             <span class="ratio">5</span>
-            <input name="r2" type="range" min="0" max="10" step="0.1" value="5" >
+            <input name="r2" type="range" min="0" max="10" step="1" value="5" >
           </div>
           <div class="range">
             <p>騎手</p>
             <span class="ratio">5</span>
-            <input name="r3" type="range" min="0" max="10" step="0.1" value="5" >
+            <input name="r3" type="range" min="0" max="10" step="1" value="5" >
           </div>
           <div class="range">
             <p>調教師</p>
             <span class="ratio">5</span>
-            <input name="r4" type="range" min="0" max="10" step="0.1" value="5" >
+            <input name="r4" type="range" min="0" max="10" step="1" value="5" >
           </div>
           <div class="range">
             <p>スピード</p>
             <span class="ratio">5</span>
-            <input name="r5" type="range" min="0" max="10" step="0.1" value="5" >
+            <input name="r5" type="range" min="0" max="10" step="1" value="5" >
+          </div>
+          <div id="tool-button" class="range">
+            <input id="reset" type="reset" value="リセット" onclick="resetFunction()">
+            <input id="calc-button" type="button" onclick="calc(r1.value, r2.value, r3.value, r4.value, r5.value);" value="決　定">
           </div>
         </div>
 
-        <div id="tool-button">
-          <input id="reset" type="reset" value="Reset" onclick="resetFunction()">
-          <input id="calc-button" type="button" onclick="calc(r1.value, r2.value, r3.value, r1.value, r5.value);" value="Enter">
-        </div>
       </form>
     </section>
     <!-- 出走表 -->
