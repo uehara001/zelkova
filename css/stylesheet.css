@@ -15,9 +15,11 @@ time, dl, dt, dd {
   list-style: none;
   margin-inline-start:0;
   border-spacing: 0;
+  
 }
 body {
-  background-color: #EEEEEE;
+  background-color: ffffff;
+  font-size: large;
 }
 
 h1 {
@@ -32,10 +34,13 @@ table {
 .content{
   border: solid 1px #d3d3d3;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #e5e5e5;
 }
 .maincolor{
-  background: #ffffff;
+  background: #14213d;
+}
+.subcolor{
+  background: #FCA311;
 }
 .wrapper {
   margin: 0 auto;
@@ -43,11 +48,12 @@ table {
 .content{
   margin-bottom: 20px;
 }
+
 /* ヘッダー */
 header{
   width: 100%;
   height: 10vh;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   border-bottom: solid 1px rgb(0, 0, 0);
@@ -57,10 +63,17 @@ header{
   align-items: center;
 }
 .logo {
-  height: 45px;
-  width: 120px;
-  background-color: beige;
+  margin: 0;
 } 
+/* フッター */
+footer {
+  background-color:  #DCDCDC;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  margin-top: 200px;
+}
 
 /* トップメイン*/
 #racelinks{
@@ -75,6 +88,9 @@ header{
   padding-top: 24px;
   position: relative;
 }
+#racelinks #today {
+  border: #FCA311 solid 1px;
+}
 .racelink h2{
   position: absolute;
   top: -25px;
@@ -84,7 +100,6 @@ header{
   height: 25px;
   line-height: 25px;
   font-size: 17px;
-  background: #017635 ;
   color: #ffffff;
   font-weight: bold;
   border-radius: 5px 5px 0 0;
@@ -114,7 +129,6 @@ header{
 
 .racelink dt {
   color: #ffffff;
-  background: #017635;
   font-size: larger;
   line-height: 40px;
 }
@@ -126,89 +140,13 @@ header{
 #raceinfo {
   display: flex;
   align-items:baseline;
+  
 }
 
 .tablehead{
   color: #ffffff;
   border: 0px none;
   margin: 0;
-}
-/* ランキング */
-#ranking{
-    width: 45%;
-}
-#ranking table {
-  margin: 0 auto;
-  text-align: center;
-  vertical-align: middle;  
-}
-#rankingtbody td:first-child{
-  background-color: #ebebeb;
-} 
-#rankingtbody td:nth-child(2){
-  background-color: #EEEEEE;
-  text-align: left;
-  padding-left: 30px;
-} 
-#rankingtbody tr:first-child{
-  height: 64px;
-  vertical-align: middle;
-  font-size: x-large;
-  font-weight: 700;
-} 
-#rankingtbody tr:first-child td:first-child{
- background-color: #FFEF84;
- color: red;
-} 
-#rankingtbody tr:first-child td:nth-child(2){
- background-color: #FFFBE5;
-}
-#rankingtbody tr:nth-child(2){
-  height: 54px;
-  vertical-align: middle;
-  font-size: 20px;
-  font-weight: 700;
-} 
-#rankingtbody tr:nth-child(2) td:first-child{
- background-color: #D8F6FF;
-} 
-#rankingtbody tr:nth-child(2) td:nth-child(2){
- background-color: #eaf2f7;
-}
-#rankingtbody tr:nth-child(3){
-  height: 44px;
-  vertical-align: middle;
-  font-size: 18px;
-  font-weight: 600;
-} 
-#rankingtbody tr:nth-child(3) td:first-child{
- background-color: #FFD4D4;
-} 
-#rankingtbody tr:nth-child(3) td:nth-child(2){
- background-color: #f5e8e8;
-}
-#rankingtbody tr:nth-child(4){
-  height: 34px;
-  vertical-align: middle;
-  font-weight: 600;
-} 
-#rankingtbody tr:nth-child(4) td:first-child{
- background-color: #d4ffdf;
-} 
-#rankingtbody tr:nth-child(4) td:nth-child(2){
- background-color: #e8f2e9;
-}
-#rankingtbody tr:nth-child(n+5):nth-child(-n+7){
-  font-weight: 600;
-} 
-#rankingtbody #rankingdefo {
-  color: #eb4c4c;
-  font-weight: bold;
-  text-decoration: underline;
-  
-}
-#rankingtbody #rankingdefo td {
-  background-color: #ffffff;
 }
 
 /* 指数表 */
@@ -234,7 +172,100 @@ header{
   text-align: left;
 }
 
+/* ランキング */
+#ranking{
+    width: 45%;
+}
+#ranking table {
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;  
+}
+#ranking th {
+  font-weight: normal;
+}
+#rankingtbody td:first-child{
+  background-color: #ebebeb;
+} 
+#rankingtbody td:nth-child(2){
+  background-color: #EEEEEE;
+  text-align: left;
+  padding-left: 30px;
+} 
+#rankingtbody tr:first-child{
+  height: 64px;
+  vertical-align: middle;
+  font-size: x-large;
+  font-weight: 700;
+} 
+#rankingtbody tr:first-child td:first-child{
+ background: #edd768;
+} 
+#rankingtbody tr:first-child td:nth-child(2){
+ background-color: #eeead6;
+}
+#rankingtbody tr:nth-child(2){
+  height: 54px;
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: 700;
+} 
+#rankingtbody tr:nth-child(2) td:first-child{
+ background-color: #6c9bed;
+} 
+#rankingtbody tr:nth-child(2) td:nth-child(2){
+ background-color: #eaf2f7;
+}
+#rankingtbody tr:nth-child(3){
+  height: 44px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 600;
+} 
+#rankingtbody tr:nth-child(3) td:first-child{
+ background-color: #d17495;
+} 
+#rankingtbody tr:nth-child(3) td:nth-child(2){
+ background-color: #f5e8e8;
+}
+#rankingtbody tr:nth-child(4){
+  height: 34px;
+  vertical-align: middle;
+  font-weight: 600;
+} 
+#rankingtbody tr:nth-child(4) td:first-child{
+ background-color: #bfe76f;
+} 
+#rankingtbody tr:nth-child(4) td:nth-child(2){
+ background-color: #e8f2e9;
+}
+#rankingtbody tr:nth-child(5){
+  height: 34px;
+  vertical-align: middle;
+  font-weight: 600;
+} 
+#rankingtbody tr:nth-child(5) td:first-child{
+ background-color: #6bd3a4;
+} 
+#rankingtbody tr:nth-child(5) td:nth-child(2){
+ background-color: #edf5f1;
+}
+
+#rankingtbody #rankingdefo {
+  color: #eb4c4c;
+  font-weight: bold;
+  text-decoration: underline;
+  
+}
+#rankingtbody #rankingdefo td {
+  background-color: #ffffff;
+}
 /* スライダー */
+#numselect {
+  outline: 3px solid #14213d;
+  outline-offset: -3px;
+  background: #EEEEEE;
+}
 
 #numselect span {
   margin-left: 0.5em;
@@ -242,32 +273,35 @@ header{
 #slider {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 30px auto;
+  justify-content: space-around;
+  margin: 20px auto 10px auto;
   width: 85%;
+
 }
 .range {
   width: 48%;
-  margin-bottom: 20px;
+  margin-bottom: 7px;
 }
 .range p {
-  margin-left: 1em;
   display: inline-block;
 }
 .range .ratio {
   display: inline-block;
   background-color: #EEEEEE;
-  width: 2rem;
+  width: 26px;
   text-align: center;
+  border: 1px solid #14213d;
 }
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   outline: none; 
-  background:#d1d1d1 ; 
+  background:#3a3a3a ; 
   cursor: pointer; 
-  height: 3px;
+  height: 2px;
   width: 90%;
+  display: block;
+  margin: 24px auto;
 }
 /* WebKit向けのつまみ */
 input[type="range"]::-webkit-slider-thumb {
@@ -275,17 +309,16 @@ input[type="range"]::-webkit-slider-thumb {
   background:#c0c0c0; 
   width: 10px; 
   height: 20px;
-  border: #a0a0a0 solid 1px;
+  border: #14213d solid 1px;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
 }
 /* Moz向けのつまみ */
 input[type="range"]::-moz-range-thumb {
-  background: #d5d5d5; /* 背景色 */
-  width: 24px; /* 幅 */
-  height: 24px; /* 高さ */
-  border-radius: 50%; /* 円形に */
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
-  border: none; /* デフォルトの線を消す */
+  background: #c0c0c0;
+  width: 10px;
+  height: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  border: #14213d solid 1px;
 }
 
 #tool-button {
@@ -304,6 +337,7 @@ input[type="range"]::-moz-range-thumb {
 /* 出走表 */
 #cardtable {
   background-color: #ffffff;
+  margin-top: 100px;
 }
 #cardtable table {
   width: 100%;
@@ -313,12 +347,12 @@ input[type="range"]::-moz-range-thumb {
   table-layout: fixed;
 }
 #cardtable table tr:first-child{
-  background: #EEEEEE;
+  background: #14213d;
   color: #777;
 }
 #cardtable table tr {
   background-color: #fff;
-  height: 70px;
+  height: 60px;
   border: 1px solid #d3d3d3;
 }
 
@@ -327,27 +361,27 @@ input[type="range"]::-moz-range-thumb {
   text-align: center;
 }
 
-/* フッター */
-footer {
-  background-color:  #DCDCDC;
-  width: 100%;
-  height: 150px;
-  display: flex;
-  align-items: center;
-}
 
 /* max770 --------------------------------------*/
 @media (max-width:770px){
+  body {
+    font-size: smallr;
+  }
+  header {
+    margin-bottom: 10px;
+  }
   .wrapper {
     width: 95%;
     margin: 0 auto;
   }
-  #ranking{
-    /* height: 400px; */
+  .content{
+    width: 100% !important;
+    margin-bottom: 10px;
   }
-  #numselect{
-    /* height: 300px; */
-  }
+  
+  #rankingtbody #rankingdefo {
+    font-size: larger;
+  }  
   #card{
     height: 400px;
   }
@@ -357,7 +391,6 @@ footer {
   }  
   .racelink dt {
   color: #ffffff;
-  background: #017635 ;
   font-size:medium;
   font-weight: bold;
   line-height: 40px;
@@ -372,11 +405,11 @@ footer {
   .wrapper {
     width: 800px;
   }
-  .content {
-    /* height: 400px; */
-  }
   .racelink{
     width: 630px;
+  }
+  #rankingtbody #rankingdefo {
+    font-size: larger;
   }  
 }
 
@@ -385,12 +418,13 @@ footer {
   #tool {
     display: flex;
     justify-content: space-between;
+    
   }
   .wrapper {
     width: 900px;
   }
   #ranking{
-    width: 50%;
+    
   }
   .content {
     /* height: 700px; */

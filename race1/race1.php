@@ -12,7 +12,7 @@
 <!-- ヘッダー -->
   <header class="maincolor">
     <div class="wrapper" id="hc">
-    <a href="../index.html"><img class="logo"></a>
+    <a href="../index.html"><img class="logo" src="../img/logo.png"></a>
     </div>
   </header>
   
@@ -25,21 +25,6 @@
     <p class="condition">馬場状態:</p>
   </div>
   <section id="tool">
-    <!-- ランキング -->
-    <div class="content" id="ranking">
-      <table>
-        <thead >
-          <tr>
-            <th class="tablehead maincolor">指数</th>
-            <th class="tablehead maincolor">競走馬</th>
-          </tr>
-        </thead>
-        <tbody id="rankingtbody">
-          <tr id="rankingdefo"><td colspan="2">ここに計算結果が出力されます。</td></tr>
-        </tbody>
-      </table>
-      
-    </div>
     <!-- 指数表 -->
     <div class="content" id="indextable">
       <?php
@@ -58,6 +43,21 @@
       }
       ?>
     </div>
+    <!-- ランキング -->
+    <div class="content" id="ranking">
+      <table>
+        <thead >
+          <tr>
+            <th class="tablehead maincolor">指数</th>
+            <th class="tablehead maincolor">競走馬</th>
+          </tr>
+        </thead>
+        <tbody id="rankingtbody">
+          <tr id="rankingdefo"><td colspan="2">ここに計算結果が出力されます。</td></tr>
+        </tbody>
+      </table>
+      
+    </div>
   </section>
     <!-- スライダー -->
     <section class="content" id="numselect">
@@ -67,7 +67,6 @@
             <p>馬番</p>
             <span class="ratio">5</span>
             <input name="r1" type="range" min="0" max="10" step="1" value="5" list="nummarks">
-
           </div>
           <div class="range">
             <p>種牡馬</p>
