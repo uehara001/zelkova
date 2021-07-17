@@ -15,12 +15,14 @@ time, dl, dt, dd {
   list-style: none;
   margin-inline-start:0;
   border-spacing: 0;
-  
+  text-decoration: none;
 }
 body {
   background-color: ffffff;
   font-size: large;
 }
+
+
 
 h1 {
   font-size: x-large;
@@ -58,26 +60,54 @@ header{
   align-items: center;
   border-bottom: solid 1px rgb(0, 0, 0);
 }
+header a:hover{
+  opacity: 0.5;
+}
 #hc {
-  display: flex;
+  display: inline-block;
   align-items: center;
 }
+
 .logo {
   margin: 0;
+  display: inline-block;
+  width: 140px;
 } 
+#logowrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 140px;
+}
+#logowrapper a {
+  text-decoration: none;
+}
+#subtitle{
+  color: #ffffff;
+  font-size: smaller;
+}
 /* フッター */
 footer {
   background-color:  #DCDCDC;
   width: 100%;
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   margin-top: 200px;
+}
+footer #copyright{
+  position: relative;
+  top: 100px;
+  font-size: 0.750rem;
+  text-align: center;
+  padding: 10px 0;
+  color: #777;
 }
 
 /* トップメイン*/
 #racelinks{
   height: 500px;
+  margin-top: 150px;
 }
 
 .racelink {
@@ -88,8 +118,9 @@ footer {
   padding-top: 24px;
   position: relative;
 }
-#racelinks #today {
-  border: #FCA311 solid 1px;
+
+.racelink a dl {
+  color: #000;
 }
 .racelink h2{
   position: absolute;
@@ -369,6 +400,15 @@ input[type="range"]::-moz-range-thumb {
   }
   header {
     margin-bottom: 10px;
+  }
+  #logowrapper{
+    width: 120px;
+  }
+  .logo{
+    width: 120px;
+  }
+  #subtitle {
+    display: none;
   }
   .wrapper {
     width: 95%;
